@@ -19,7 +19,7 @@ app.post('/get-available-buildings', async (req, res) => {
   try {
     // Conectar a la base de datos y ejecutar la consulta
     const connection = await mysql.createConnection(dbConfig);
-    const [rows] = await connection.execute('SELECT * FROM edificios WHERE arriendo <= ?', [budget]);
+    const [rows] = await connection.execute('SELECT * FROM departamentos WHERE arriendo <= ?', [budget]);
 
     // Cerrar la conexión y enviar la respuesta
     await connection.end();
